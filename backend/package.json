@@ -14,9 +14,7 @@
     "format": "prettier --config .prettierrc --write .",
     "test": "vitest run",
     "test:dev": "vitest dev",
-    "test:cov": "vitest run --coverage",
-    "release": "semantic-release",
-    "prepare": "husky"
+    "test:cov": "vitest run --coverage"
   },
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^7.0.0",
