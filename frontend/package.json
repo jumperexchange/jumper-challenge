@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --config .prettierrc  --check .",
+    "format:fix": "prettier --config .prettierrc --write ."
   },
   "dependencies": {
     "@emotion/cache": "^11.11.0",
@@ -24,6 +26,7 @@
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
+    "prettier": "^3.2.5",
     "typescript": "^5"
   }
 }

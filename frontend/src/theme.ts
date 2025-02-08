@@ -13,7 +13,7 @@ const theme = createTheme({
     fontFamily: roboto.style.fontFamily,
     h1: {
       fontSize: '2rem',
-    }
+    },
   },
 });
 
