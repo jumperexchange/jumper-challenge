@@ -1,0 +1,42 @@
+name: Code quality
+
+on:
+  pull_request:
+
+concurrency:
+  group: code-quality-${{ github.head_ref }}
+  cancel-in-progress: true
+
+jobs:
+  frontend:
+    name: Frontend lint and format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.11.0'
+          cache: 'npm'
+
+      - run: |
+        cd frontend
+        npm ci
+        npm run format
+        npm run lint
+  backend:
+    name: Backend lint and format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.11.0'
+          cache: 'npm'
+
+      - run: |
+        cd backend
+        npm ci
+        npm run format
+        npm run lint
